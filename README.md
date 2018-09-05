@@ -2,7 +2,7 @@
 
 <p align="center"> a weather SDK.</p>
 
-[![Build Status](https://travis-ci.org/koo/weather.svg?branch=master)](https://travis-ci.org/koo/weather)
+[![Build Status](https://travis-ci.org/ElaineKoo/weather.svg?branch=master)](https://travis-ci.org/ElaineKoo/weather)
 
 ## Installing
 
