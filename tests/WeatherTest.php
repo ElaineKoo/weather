@@ -3,13 +3,13 @@
 namespace Koo\Weather\Tests;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\ClientInterface;
-use GuzzleHttp\Psr7\Response;
-use Koo\Weather\Exceptions\HttpException;
-use Koo\Weather\Exceptions\InvalidArgumentException;
 use Koo\Weather\Weather;
 use Mockery\Matcher\AnyArgs;
+use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\ClientInterface;
 use PHPUnit\Framework\TestCase;
+use Koo\Weather\Exceptions\HttpException;
+use Koo\Weather\Exceptions\InvalidArgumentException;
 
 class WeatherTest extends TestCase
 {

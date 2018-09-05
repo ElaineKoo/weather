@@ -3,8 +3,8 @@
 namespace Koo\Weather;
 
 use GuzzleHttp\Client;
-use Koo\Weather\Exceptions\InvalidArgumentException;
 use Koo\Weather\Exceptions\HttpException;
+use Koo\Weather\Exceptions\InvalidArgumentException;
 
 class Weather
 {
@@ -40,11 +40,11 @@ class Weather
     public function getWeather($city, $type = 'base', $format = 'json')
     {
         $url = 'https://restapi.amap.com/v3/weather/weatherInfo';
-        if (!\in_array(\strtolower($format), ['xml', 'json'])) {
+        if (! \in_array(\strtolower($format), ['xml', 'json'])) {
             throw new InvalidArgumentException('Invalid response format: '.$format);
         }
 
-        if (!\in_array(\strtolower($type), ['base', 'all'])) {
+        if (! \in_array(\strtolower($type), ['base', 'all'])) {
             throw new InvalidArgumentException('Invalid type value(base/all): '.$type);
         }
 
