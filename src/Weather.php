@@ -3,8 +3,8 @@
 namespace Koo\Weather;
 
 use GuzzleHttp\Client;
-use Koo\Weather\Exceptions\InvalidArgumentException;
 use Koo\Weather\Exceptions\HttpException;
+use Koo\Weather\Exceptions\InvalidArgumentException;
 
 class Weather
 {
@@ -49,9 +49,9 @@ class Weather
         }
 
         $query = array_filter([
-            'key' => $this->key,
-            'city' => $city,
-            'output' => $format,
+            'key'        => $this->key,
+            'city'       => $city,
+            'output'     => $format,
             'extensions' => $type,
         ]);
 
