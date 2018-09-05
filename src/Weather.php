@@ -37,15 +37,15 @@ class Weather
         return $this->getWeather($city, 'all', $format);
     }
 
-    public function getWeather($city, $type = 'base',$format = 'json')
-    {$url = 'https://restapi.amap.com/v3/weather/weatherInfo';
-
+    public function getWeather($city, $type = 'base', $format = 'json')
+    {
+        $url = 'https://restapi.amap.com/v3/weather/weatherInfo';
         if (!\in_array(\strtolower($format), ['xml', 'json'])) {
-            throw new InvalidArgumentException('Invalid response format: ' . $format);
+            throw new InvalidArgumentException('Invalid response format: '.$format);
         }
 
         if (!\in_array(\strtolower($type), ['base', 'all'])) {
-            throw new InvalidArgumentException('Invalid type value(base/all): ' . $type);
+            throw new InvalidArgumentException('Invalid type value(base/all): '.$type);
         }
 
         $query = array_filter([
@@ -59,8 +59,8 @@ class Weather
             $response = $this->getHttpClient()->get($url, [
                 'query' => $query,
             ])->getBody()->getContents();
-            return 'json' === $format ? json_decode($response, true) : $response;
 
+            return 'json' === $format ? json_decode($response, true) : $response;
         } catch (\Exception $e) {
             throw new HttpException($e->getMessage(), $e->getCode(), $e);
         }
